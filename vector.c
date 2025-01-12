@@ -52,7 +52,7 @@ void push_back( list* l, int element, int* error )
 
       if ( *error != 0 )
       {
-         exit(0);
+         return;
       }
    }
 
