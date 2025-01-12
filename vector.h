@@ -2,6 +2,7 @@
 #define VECTOR_H
 
 #include <stddef.h>
+#include <stdlib.h>
 
 // INIT_LIST
 // PUSH_BACK
@@ -15,7 +16,7 @@
 #define GROW_CAPACITY( capacity ) ( ( capacity ) < 8 ? 8 : ( capacity ) * 2 )
 
 // ----------------------------------------------------------------------------
-#define LIST_FREE( pointer ) list_reallocate( pointer, 0, NULL )
+#define LIST_FREE( pointer ) free( pointer )
 
 // ----------------------------------------------------------------------------
 typedef struct
@@ -28,9 +29,6 @@ typedef struct
 
 // ----------------------------------------------------------------------------
 void INIT_LIST( list* l );
-
-// ----------------------------------------------------------------------------
-void* list_reallocate( void* pointer, size_t newSize, int* error );
 
 // ----------------------------------------------------------------------------
 void push_back( list* l, int element, int* error );

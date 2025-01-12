@@ -1,8 +1,6 @@
 #include "stdio.h"
 #include <stdbool.h>
-#include <stddef.h>
 #include <stdint.h>
-#include <stdlib.h>
 
 #include "vector.h"
 
@@ -15,7 +13,7 @@ void INIT_LIST( list* l )
 }
 
 // ----------------------------------------------------------------------------
-void* list_reallocate( void* pointer, size_t newSize, int* error )
+static void* list_reallocate( void* pointer, size_t newSize, int* error )
 {
    if ( newSize == 0 )
    {
